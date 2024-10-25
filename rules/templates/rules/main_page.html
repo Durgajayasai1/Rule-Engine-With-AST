@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rule Engine With AST</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #141414;
+        font-family: "Poppins", serif;
+      }
+
+      .main-heading {
+        text-align: center;
+        color: #ccc;
+        margin-top: 3rem;
+      }
+
+      .sub-title {
+        text-align: center;
+        color: #ccc;
+        font-size: 0.89rem;
+        margin-top: 0.5rem;
+      }
+
+      .navigators ul {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+      }
+
+      .navigators ul li {
+        list-style: none;
+      }
+
+      button {
+        background: #fff;
+        color: #000;
+        padding: 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.67rem;
+        transition: all 400ms ease;
+      }
+
+      button:hover {
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        border: 1px solid #7c7c7c;
+      }
+
+      .footer-p {
+        text-align: center;
+        color: #fff;
+        font-size: 0.89rem;
+        margin-top: 3rem;
+      }
+
+      @media screen and (max-width: 600px) {
+        .main-section {
+          padding: 1.5rem;
+        }
+
+        .main-heading {
+          font-size: 1.5rem;
+        }
+
+        .navigators ul {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .navigators ul li {
+          width: 100%;
+        }
+
+        .navigators ul li a {
+          width: 100%;
+          display: block;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-section">
+      <h1 class="main-heading">Rule Engine Main Page</h1>
+      <p class="sub-title">*Select an option to perform</p>
+
+      <div class="navigators">
+        <ul>
+          <li>
+            <a href="{% url 'create_rule' %}"><button>Create Rule</button></a>
+          </li>
+          <li>
+            <a href="{% url 'combine_rules' %}"
+              ><button>Combine Rules</button></a
+            >
+          </li>
+          <li>
+            <a href="{% url 'evaluate_rule' %}"
+              ><button>Evaluate Rule</button></a
+            >
+          </li>
+          <li>
+            <a href="{% url 'modify_rule' %}"><button>Modify Rule</button></a>
+          </li>
+          <li>
+            <a href="{% url 'show_all_rules' %}"
+              ><button>Show All Rules</button></a
+            >
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <p class="footer-p">Created by Durgajayasai P</p>
+      </footer>
+    </div>
+  </body>
+</html>

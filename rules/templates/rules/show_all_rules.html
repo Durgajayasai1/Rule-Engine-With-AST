@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rule Engine With AST</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #1a1a1a;
+        font-family: "Poppins", serif;
+        color: #f0f0f0;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        background-color: #2a2a2a;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        margin-top: 2rem;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        color: #ffffff;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1.5rem;
+      }
+
+      th,
+      td {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid #444444;
+        color: #f0f0f0;
+      }
+
+      th {
+        background-color: #333333;
+      }
+
+      tr:nth-child(even) {
+        background-color: #1e1e1e;
+      }
+
+      tr:hover {
+        background-color: #333333;
+      }
+
+      .no-rules {
+        text-align: center;
+        padding: 1rem;
+        color: #ff6161;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer {
+        margin-top: 3rem;
+        text-align: center;
+      }
+
+      .footer p {
+        color: #ccc;
+        font-size: 0.89rem;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #ffffff;
+        padding: 0.9rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 300ms ease;
+        text-align: center;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          padding: 1.5rem;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        th,
+        td {
+          padding: 0.5rem 0.75rem;
+          font-size: 0.9rem;
+        }
+
+        button {
+          padding: 0.8rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>All Rules</h1>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Rule String</th>
+        </tr>
+        {% for rule in rules %}
+        <tr>
+          <td>{{ rule.id }}</td>
+          <td>{{ rule.rule_string }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="2" class="no-rules">No rules found.</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <div class="button-container">
+        <a href="{% url 'create_rule' %}">
+          <button>Create New Rule</button>
+        </a>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Created by Durgajayasai P</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rule Engine with AST</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #1a1a1a;
+        font-family: "Poppins", serif;
+        color: #f0f0f0;
+        min-height: 100vh;
+        padding: 1rem;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .main-heading {
+        font-size: 2rem;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      form {
+        width: 100%;
+        background-color: #2a2a2a;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 2rem;
+      }
+
+      .main-btn {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #ffffff;
+        padding: 0.9rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 300ms ease;
+        width: 100%;
+        max-width: 200px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .exit-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .exit-btns a {
+        width: 100%;
+        max-width: 170px;
+        text-decoration: none;
+      }
+
+      .exit-btns button {
+        background: #323131;
+        padding: 0.8rem 1rem;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        transition: all 400ms ease;
+      }
+
+      .exit-btns button:hover {
+        background: transparent;
+        border: 1px solid #323131;
+      }
+
+      .footer-p {
+        text-align: center;
+        color: #ccc;
+        font-size: 0.89rem;
+        margin-top: 3rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color: #333333;
+        border: 1px solid #555555;
+        border-radius: 0.5rem;
+        color: #f0f0f0;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 300ms ease;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #4caf50;
+      }
+
+      @media screen and (max-width: 600px) {
+        .main-heading {
+          font-size: 1.75rem;
+        }
+
+        form {
+          padding: 1.5rem;
+        }
+
+        .main-btn button {
+          width: 100%;
+        }
+
+        .exit-btns {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .exit-btns a {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="main-heading">Create Rule</h1>
+      <form method="POST">
+        {{ msg }} {% csrf_token %} {{ form.as_p }}
+        <div class="main-btn">
+          <button type="submit">Create Rule</button>
+        </div>
+      </form>
+      <div class="exit-btns">
+        <a href="{% url 'main_page' %}">
+          <button type="button">Main Page</button>
+        </a>
+        <a href="{% url 'show_all_rules' %}">
+          <button type="button">All Rules</button>
+        </a>
+      </div>
+      <footer>
+        <p class="footer-p">Created by Durgajayasai P</p>
+      </footer>
+    </div>
+  </body>
+</html>
