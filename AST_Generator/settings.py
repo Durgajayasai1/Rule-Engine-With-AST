@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-ke4hh%06s(j*-mxdlnho^a(rtr)75g@#ufxpu-#*vr*rtxp^_z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://rule-engine-with-ast-oozu.onrender.com']
+
 
 
 # Application definition
