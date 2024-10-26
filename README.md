@@ -36,3 +36,9 @@ The rule engine consists of two main components:
 ## Summary
 This README offers comprehensive instructions for setting up and running the Rule Engine application. 
 Adhering to these guidelines will ensure the application operates as intended.
+
+## Live Demo
+
+Check out the live demo of the Rule Engine with AST: [Rule Engine with AST Live](https://rule-engine-with-ast-oozu.onrender.com)
+
+
